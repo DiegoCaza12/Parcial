@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ENTRENAMIENTO</ion-title>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/"> </ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let usu of usuarios">
+    <ion-label>Bienvenido:</ion-label>
+    <ion-label >{{ usu.nombre }} {{ usu.apellido }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Fecha</ion-label>
+    <ion-input type="text" required [(ngModel)]="txt_date" placeholder="YYYY-MM-DD"></ion-input>      
+  </ion-item>  
+  <ion-item>
+    <ion-label >Seleccion Deporte</ion-label>
+    <ion-select required [(ngModel)]="txt_deporte" placeholder="Escoga uno">
+      <ion-select-option value="Correr">Correr</ion-select-option>
+      <ion-select-option value="Nadar">Nadar</ion-select-option>
+      <ion-select-option value="Escalada">Escala</ion-select-option>
+      <ion-select-option value="Caminar">Caminar</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Cronometro
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-input required [(ngModel)]="txt_tiempo" >{{time.toISOString().substr(11,8)}}</ion-input>
+    <ion-button (click)="Empezar()"> Empezar </ion-button>
+    <ion-button (click)="Pausar()"> Pausa </ion-button>
+    <ion-button (click)="Reiniciar()"> Reiniciar </ion-button>
+  </ion-item>
+
+  <iton-item>
+    <ion-button (click)="registrar()">
+      Guardar
+    </ion-button>
+  </iton-item>  
+</ion-content>

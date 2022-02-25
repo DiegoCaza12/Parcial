@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>rmensual</ion-title>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/"> </ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Ingrese el número del mes: </ion-label>
+    <ion-input type="text" required [(ngModel)]="txt_fecha" placeholder="1-2..11-12"></ion-input>
+    <ion-button (click)="listardiario()" >Buscar</ion-button>
+  </ion-item>
+  
+    <ion-item *ngFor="let usu of usuarios"> 
+      <ion-label> Deporte: {{usu.deporte}}</ion-label>
+      <ion-label> Fecha: {{usu.fecha}} </ion-label>
+      <ion-label>Tiempo: {{usu.cronometro}}</ion-label>
+    </ion-item>
+</ion-content>

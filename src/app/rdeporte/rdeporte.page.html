@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>rdeporte</ion-title>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/"> </ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item><ion-label >Seleccion Deporte</ion-label>
+    <ion-select required [(ngModel)]="txt_deporte" placeholder="Escoga uno">
+      <ion-select-option value="Correr">Correr</ion-select-option>
+      <ion-select-option value="Nadar">Nadar</ion-select-option>
+      <ion-select-option value="Escalada">Escalada</ion-select-option>
+      <ion-select-option value="Caminar">Caminar</ion-select-option>
+    </ion-select></ion-item>
+  
+  <ion-button (click)="listardiario()">Buscar</ion-button>
+ 
+  <ion-item *ngFor="let usu of usuarios"> 
+    <ion-label> Fecha: {{usu.fecha}} </ion-label>
+    <ion-label>Tiempo: {{usu.cronometro}}</ion-label>
+  </ion-item>
+  
+</ion-content>

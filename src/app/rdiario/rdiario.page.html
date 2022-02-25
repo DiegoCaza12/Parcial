@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>rdiario</ion-title>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/"> </ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Fecha</ion-label>
+    <ion-input type="text" required [(ngModel)]="txt_date" placeholder="YYYY-MM-DD"></ion-input>
+    <ion-button (click)="listardiario()" >Buscar</ion-button>
+  </ion-item>
+  
+    <ion-item *ngFor="let usu of usuarios"> 
+      <ion-label> {{usu.deporte}} {{usu.fecha}} {{usu.cronometro}}</ion-label>
+    </ion-item>
+  
+</ion-content>

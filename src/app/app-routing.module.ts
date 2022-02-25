@@ -11,6 +11,34 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'entrenamiento',
+    loadChildren: () => import('./entrenamiento/entrenamiento.module').then( m => m.EntrenamientoPageModule)
+  },
+  {
+    path: 'rdiario',
+    loadChildren: () => import('./rdiario/rdiario.module').then( m => m.RdiarioPageModule)
+  },
+  {
+    path: 'rsema',
+    loadChildren: () => import('./rsema/rsema.module').then( m => m.RsemaPageModule)
+  },
+  {
+    path: 'rmensual',
+    loadChildren: () => import('./rmensual/rmensual.module').then( m => m.RmensualPageModule)
+  },
+  {
+    path: 'rdeporte',
+    loadChildren: () => import('./rdeporte/rdeporte.module').then( m => m.RdeportePageModule)
+  },
+  {
+    path: 'usuario',
+    loadChildren: () => import('./usuario/usuario.module').then( m => m.UsuarioPageModule)
+  },
 ];
 
 @NgModule({
