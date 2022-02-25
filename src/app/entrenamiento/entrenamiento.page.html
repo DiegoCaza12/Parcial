@@ -14,8 +14,12 @@
   </ion-item>
   <ion-item>
     <ion-label>Fecha</ion-label>
-    <ion-input type="text" required [(ngModel)]="txt_date" placeholder="YYYY-MM-DD"></ion-input>      
-  </ion-item>  
+    <ion-datetime value="{{fecha | date:'yyyy-MM-dd'}}"
+                  display-format="YYYY-MM-DD"
+                  [{ngModel}]="fecha"
+                  readonly>
+    </ion-datetime>
+  </ion-item> 
   <ion-item>
     <ion-label >Seleccion Deporte</ion-label>
     <ion-select required [(ngModel)]="txt_deporte" placeholder="Escoga uno">

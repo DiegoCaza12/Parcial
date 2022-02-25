@@ -16,7 +16,7 @@ export class RdeportePage implements OnInit {
     private servicio: AccesoService, private navCtrl:NavController) { 
       this.servicio.getsesion('idusuario').then(res=>{
         this.codusuario=res;
-        this.mostrarToast( this.codusuario);
+        //this.mostrarToast( this.codusuario);
         });
     }
 

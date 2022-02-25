@@ -15,7 +15,7 @@ export class EntrenamientoPage implements OnInit {
   txt_tiempo:string;
   interval;
   time = new Date(null);
-
+  fecha : Date = new Date();
   constructor(private ToastCtrl: ToastController,
     private servicio: AccesoService, private navCtrl:NavController) {
 
@@ -33,7 +33,7 @@ export class EntrenamientoPage implements OnInit {
     listarUsuario(){
       let body={
         'accion':'Listar2',
-        'codusuario': this.codusuario
+        'idusuario': this.codusuario
       }
       return new Promise (resolve=>{
         this.servicio.postData(body).subscribe((res:any)=>{
@@ -67,7 +67,7 @@ export class EntrenamientoPage implements OnInit {
         'accion': 'insertar',
         'idusuario': this.codusuario,
         'deporte':this.txt_deporte,
-        'fecha': this.txt_date,
+        'fecha': this.fecha.toISOString(),
         'tiempo': this.time.toISOString().substr(11,8)  
       }
       return new Promise (resolve =>{

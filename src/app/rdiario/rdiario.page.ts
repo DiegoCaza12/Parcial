@@ -12,21 +12,27 @@ export class RdiarioPage implements OnInit {
   codusuario:any;
   usuarios: any [];
   txt_date:string;
+  fecha : Date = new Date();
   constructor(private ToastCtrl: ToastController,
     private servicio: AccesoService, private navCtrl:NavController) { 
       this.servicio.getsesion('idusuario').then(res=>{
         this.codusuario=res;
-        this.mostrarToast( this.codusuario);
+        //this.mostrarToast( this.codusuario);
         });
     }
 
   ngOnInit() {
   }
+
+ /* cambioFecha(event){
+    console.log('ionChange',event);
+    this.fecha=event
+  }*/
 public listardiario(){
       let body={
         'accion':'ListarD',
         'idusuario': this.codusuario,
-        'date':this.txt_date
+        'date':this.fecha
 
       }
       return new Promise (resolve=>{
