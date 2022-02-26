@@ -8,5 +8,30 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label>Ingrese mes semana 1: </ion-label>
+    <ion-input type="text" required [(ngModel)]="txt_fecha" placeholder="1-2..11-12"></ion-input>
+    <ion-button (click)="listardiario()" >Buscar</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Ingrese mes semana 2: </ion-label>
+    <ion-input type="text" required [(ngModel)]="txt_fecha1" placeholder="1-2..11-12"></ion-input>
+    <ion-button (click)="listardiario1()" >Buscar</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Ingrese mes semana 3: </ion-label>
+    <ion-input type="text" required [(ngModel)]="txt_fecha2" placeholder="1-2..11-12"></ion-input>
+    <ion-button (click)="listardiario2()" >Buscar</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Ingrese mes semana 4: </ion-label>
+    <ion-input type="text" required [(ngModel)]="txt_fecha3" placeholder="1-2..11-12"></ion-input>
+    <ion-button (click)="listardiario3()" >Buscar</ion-button>
+  </ion-item>
 
+    <ion-item *ngFor="let usu of usuarios"> 
+      <ion-label> Deporte: {{usu.deporte}}</ion-label>
+      <ion-label> Fecha: {{usu.fecha}} </ion-label>
+      <ion-label>Tiempo: {{usu.cronometro}}</ion-label>
+    </ion-item>
 </ion-content>
